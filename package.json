@@ -1,0 +1,40 @@
+{
+  "name": "ouche-nation-launcher",
+  "version": "1.0.0",
+  "description": "Launcher Minecraft pour Ouche Nation",
+  "main": "updater.js",
+  "scripts": {
+    "start": "electron updater.js",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.ouchenation.launcher",
+    "productName": "Ouche Nation Launcher",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "updater.js",
+      "loading.html",
+      "supabase.js",
+      "icon.ico"
+    ]
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "fs-extra": "^11.2.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "bcryptjs": "^2.4.3",
+    "adm-zip": "^0.5.10",
+    "minecraft-launcher-core": "^3.17.3"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}
